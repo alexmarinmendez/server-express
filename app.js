@@ -1,5 +1,8 @@
 const express = require('express');
+const dotenv = require('dotenv')
 const app = express();
+
+dotenv.config()
 
 let PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () => console.log('Server Up'));
@@ -9,5 +12,5 @@ app.get('/', (req, res) => {
 })
 
 app.get('/users', (req, res) => {
-    res.send({ mensaje: `Aqui los users` });
+    res.send({ mensaje: `Mensaje para los users: ${process.env.MENSAJE}` });
 })
