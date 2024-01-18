@@ -8,7 +8,7 @@ let PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () => console.log('Server Up'));
 
 app.get('/', (req, res) => {
-    res.send({ mensaje: `Server Up on PORT ${PORT}` });
+    res.send({ mensaje: `Server Up` });
 })
 
 app.get('/users', (req, res) => {
